@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, ArrowRight, Zap, Lock, Globe, Server } from 'lucide-react';
 import { validateDomain } from '../utils/securityEngine';
+import cyberLabImg from '../assets/images/bright_cyber_eng_studio_1793912327705.jpg';
 
 interface HeroProps {
   onScanDomain: (domain: string) => void;
@@ -172,15 +173,14 @@ export const Hero: React.FC<HeroProps> = ({ onScanDomain, onOpenProtectModal }) 
                 /* Daylight Studio Photo */
                 <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[420px] w-full bg-slate-100 overflow-hidden">
                   <img
-                    src="/src/assets/images/bright_cyber_eng_studio_1793912327705.jpg"
+                    src={cyberLabImg}
                     alt="Laboratorio di ingegneria della sicurezza AegisShield con monitoraggio globale e WAF"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
                       const target = e.currentTarget;
-                      target.style.display = 'none';
-                      if (target.parentElement) {
-                        target.parentElement.classList.add('bg-gradient-to-br', 'from-white', 'via-slate-100', 'to-slate-200');
+                      if (!target.src.includes('/assets/images/bright_cyber_eng_studio_1793912327705.jpg')) {
+                        target.src = '/assets/images/bright_cyber_eng_studio_1793912327705.jpg';
                       }
                     }}
                   />

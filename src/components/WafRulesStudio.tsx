@@ -7,6 +7,7 @@ import {
   DEFAULT_SECURITY_RULES,
   calculateSecurityScore,
 } from '../utils/securityEngine';
+import datacenterImg from '../assets/images/bright_datacenter_corridor_1793912328121.jpg';
 
 interface WafRulesStudioProps {
   onOpenProtectModal: () => void;
@@ -343,12 +344,15 @@ export const WafRulesStudio: React.FC<WafRulesStudioProps> = ({ onOpenProtectMod
             <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
               <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
                 <img
-                  src="/src/assets/images/bright_datacenter_corridor_179392328121.jpg"
+                  src={datacenterImg}
                   alt="Infrastruttura data center europea luminosa e moderna"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center"
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/images/bright_datacenter_corridor_1793912328121.jpg';
+                    const target = e.currentTarget;
+                    if (!target.src.includes('/assets/images/bright_datacenter_corridor_1793912328121.jpg')) {
+                      target.src = '/assets/images/bright_datacenter_corridor_1793912328121.jpg';
+                    }
                   }}
                 />
                 <div className="p-3 bg-white border-t border-slate-100 text-xs text-left">
