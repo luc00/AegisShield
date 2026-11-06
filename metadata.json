@@ -1,0 +1,7 @@
+{
+  "name": "AegisShield CyberDefense",
+  "description": "Piattaforma di cybersecurity avanzata per proteggere siti web e infrastrutture cloud da attacchi hacker, DDoS, SQL Injection, XSS e vulnerabilità zero-day.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
